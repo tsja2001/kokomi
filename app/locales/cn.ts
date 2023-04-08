@@ -3,7 +3,8 @@ import { SubmitKey } from "../store/app";
 const cn = {
   WIP: "该功能仍在开发中……",
   Error: {
-    Unauthorized: "现在是未授权状态，请在设置页输入访问密码。",
+    Unauthorized:
+      "抱歉旅行者, 你还没有验证身份, 请到设置中输入密码或者API Key再来找我吧",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} 条对话`,
@@ -47,7 +48,7 @@ const cn = {
   Home: {
     NewChat: "新的聊天",
     DeleteChat: "确认删除选中的对话？",
-    DeleteToast: "已删除会话",
+    DeleteToast: "已删除和Kokomi的对话",
     Revert: "撤销",
   },
   Settings: {
@@ -138,9 +139,11 @@ const cn = {
     },
   },
   Store: {
-    DefaultTopic: "新的聊天",
-    BotHello: "有什么可以帮你的吗",
-    Error: "出错了，稍后重试吧",
+    DefaultTopic: "和Kokomi开启一段新奇体验...",
+    // BotHello: "我是Kokomi, 主人有什么需要吗？",
+    BotHello:
+      "我是Kokomi, 海祇岛的「现人神巫女」。此次与你一起出行, 就当做是放松一下…咳, 就当做是对外考察吧。请问主人有什么吩咐吗?",
+    Error: "主人抱歉, 我的能量不足了, 请稍后再试",
     Prompt: {
       History: (content: string) =>
         "这是 ai 和用户的历史聊天总结作为前情提要：" + content,
