@@ -18,6 +18,9 @@
 
   /* stroke */
   --border-in-light: 1px solid rgb(222, 222, 222);
+
+  /* 渐变色 */
+  --background-image: linear-gradient(to top, #f5d4e5 0%, #f5d4e5 1%, #cad8e9 100%);
 }
 
 @mixin dark {
@@ -36,6 +39,13 @@
   --border-in-light: 1px solid rgba(255, 255, 255, 0.192);
 
   --theme-color: var(--gray);
+
+  /* 渐变色 */
+  // --background-image: linear-gradient(to top, #f5d4e5 0%, #f5d4e5 1%, #cad8e9 100%);
+  // --background-image: linear-gradient(to top, #2a2a2a 0%, #383838 1%, #1d3c5a 100%);
+  --background-image: linear-gradient(to top, #572b51 0%, #472940 1%, #1d3c5a 100%);
+
+
 }
 
 .light {
