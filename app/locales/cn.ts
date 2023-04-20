@@ -142,7 +142,7 @@ const cn = {
     DefaultTopic: "和Kokomi开启一段新奇体验...",
     // BotHello: "我是Kokomi, 主人有什么需要吗？",
     BotHello:
-      "おはよう, 有什么需要帮你的吗?",
+      "おはよう, 请问有什么需要帮助的吗?",
     Error: "error, 请稍后再试",
     Prompt: {
       History: (content: string) =>
