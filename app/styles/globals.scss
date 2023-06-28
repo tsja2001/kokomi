@@ -1,13 +1,15 @@
+@import "./animation.scss";
+@import "./window.scss";
+
 @mixin light {
+  --theme: light;
+
   /* color */
   --white: white;
   --black: rgb(48, 48, 48);
   --gray: rgb(250, 250, 250);
-  // --primary: rgb(29, 147, 171);
-  // --primary: rgb(231, 166, 202);
-  --primary: #a8c3e4;
-  // --second: rgb(231, 248, 255);
-  --second: #cad8e9;
+  --primary: rgb(29, 147, 171);
+  --second: rgb(231, 248, 255);
   --hover-color: #f3f3f3;
   --bar-color: rgba(0, 0, 0, 0.1);
   --theme-color: var(--gray);
@@ -18,20 +20,17 @@
 
   /* stroke */
   --border-in-light: 1px solid rgb(222, 222, 222);
-
-  /* 渐变色 */
-  --background-image: linear-gradient(to top, #f5d4e5 0%, #f5d4e5 1%, #cad8e9 100%);
 }
 
 @mixin dark {
+  --theme: dark;
+
   /* color */
   --white: rgb(30, 30, 30);
   --black: rgb(187, 187, 187);
   --gray: rgb(21, 21, 21);
-  // --primary: rgb(29, 147, 171);
-  --primary: hsl(327, 40%, 50%);
-  // --second: rgb(27 38 42);
-  --second: #3e383b;
+  --primary: rgb(29, 147, 171);
+  --second: rgb(27 38 42);
   --hover-color: #323232;
 
   --bar-color: rgba(255, 255, 255, 0.1);
@@ -40,12 +39,9 @@
 
   --theme-color: var(--gray);
 
-  /* 渐变色 */
-  // --background-image: linear-gradient(to top, #f5d4e5 0%, #f5d4e5 1%, #cad8e9 100%);
-  // --background-image: linear-gradient(to top, #2a2a2a 0%, #383838 1%, #1d3c5a 100%);
-  --background-image: linear-gradient(to top, #572b51 0%, #472940 1%, #1d3c5a 100%);
-
-
+  div:not(.no-dark) > svg {
+    filter: invert(0.5);
+  }
 }
 
 .light {
@@ -92,6 +88,9 @@
 }
 html {
   height: var(--full-height);
+
+  font-family: "Noto Sans SC", "SF Pro SC", "SF Pro Text", "SF Pro Icons",
+    "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 body {
@@ -105,8 +104,7 @@ body {
   justify-content: center;
   align-items: center;
   user-select: none;
-  font-family: "Noto Sans SC", "SF Pro SC", "SF Pro Text", "SF Pro Icons",
-    "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  touch-action: pan-x pan-y;
 
   @media only screen and (max-width: 600px) {
     background-color: var(--second);
@@ -147,6 +145,7 @@ label {
 
 input {
   text-align: center;
+  font-family: inherit;
 }
 
 input[type="checkbox"] {
@@ -231,6 +230,7 @@ input[type="password"] {
   color: var(--black);
   padding: 0 10px;
   max-width: 50%;
+  font-family: inherit;
 }
 
 div.math {
@@ -248,6 +248,10 @@ div.math {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 600px) {
+    align-items: flex-end;
+  }
 }
 
 .link {
@@ -297,10 +301,6 @@ pre {
 .clickable {
   cursor: pointer;
 
-  div:not(.no-dark) > svg {
-    filter: invert(0.5);
-  }
-
   &:hover {
     filter: brightness(0.9);
   }
@@ -319,4 +319,37 @@ pre {
   pre {
     overflow: auto;
   }
+}
+
+.password-input-container {
+  max-width: 50%;
+  display: flex;
+  justify-content: flex-end;
+
+  .password-eye {
+    margin-right: 4px;
+  }
+
+  .password-input {
+    min-width: 80%;
+  }
+}
+
+.user-avatar {
+  height: 30px;
+  min-height: 30px;
+  width: 30px;
+  min-width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-in-light);
+  box-shadow: var(--card-shadow);
+  border-radius: 10px;
+}
+
+.one-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
