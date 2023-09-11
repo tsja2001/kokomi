@@ -114,14 +114,14 @@ OpenAI 接口代理 URL，如果你手动配置了 openai 接口代理，请填�
 OPENAI_API_KEY=<your api key here>
 
 # 中国大陆用户，可以使用本项目自带的代理进行开发，你也可以自由选择其他代理地址
-BASE_URL=https://chatgpt1.nextweb.fun/api/proxy
+BASE_URL=https://chatgpt2.nextweb.fun/api/proxy
 ```
 
 ### 本地开发
 
 1. 安装 nodejs 18 和 yarn，具体细节请询问 ChatGPT；
 2. 执行 `yarn install && yarn dev` 即可。⚠️ 注意：此命令仅用于本地开发，不要用于部署！
-3. 如果你想本地部署，请使用 `yarn install && yarn start` 命令，你可以配合 pm2 来守护进程，防止被杀死，详情询问 ChatGPT。
+3. 如果你想本地部署，请使用 `yarn install && yarn build && yarn start` 命令，你可以配合 pm2 来守护进程，防止被杀死，详情询问 ChatGPT。
 
 ## 部署
 
@@ -135,8 +135,8 @@ BASE_URL=https://chatgpt1.nextweb.fun/api/proxy
 docker pull yidadaa/chatgpt-next-web
 
 docker run -d -p 3000:3000 \
-   -e OPENAI_API_KEY="sk-xxxx" \
-   -e CODE="页面访问密码" \
+   -e OPENAI_API_KEY=sk-xxxx \
+   -e CODE=页面访问密码 \
    yidadaa/chatgpt-next-web
 ```
 
@@ -144,10 +144,10 @@ docker run -d -p 3000:3000 \
 
 ```shell
 docker run -d -p 3000:3000 \
-   -e OPENAI_API_KEY="sk-xxxx" \
-   -e CODE="页面访问密码" \
+   -e OPENAI_API_KEY=sk-xxxx \
+   -e CODE=页面访问密码 \
    --net=host \
-   -e PROXY_URL="http://127.0.0.1:7890" \
+   -e PROXY_URL=http://127.0.0.1:7890 \
    yidadaa/chatgpt-next-web
 ```
 
@@ -179,8 +179,9 @@ bash <(curl -s https://raw.githubusercontent.com/Yidadaa/ChatGPT-Next-Web/main/s
 
 [见项目贡献者列表](https://github.com/Yidadaa/ChatGPT-Next-Web/graphs/contributors)
 
+### 相关项目
+- [one-api](https://github.com/songquanpeng/one-api): 一站式大模型额度管理平台，支持市面上所有主流大语言模型
+
 ## 开源协议
 
-> 反对 996，从我开始。
-
-[Anti 996 License](https://github.com/kattgu7/Anti-996-License/blob/master/LICENSE_CN_EN)
+[MIT](https://opensource.org/license/mit/)

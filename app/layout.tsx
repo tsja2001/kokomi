@@ -3,10 +3,11 @@ import "./styles/globals.scss";
 import "./styles/markdown.scss";
 import "./styles/highlight.scss";
 import { getClientConfig } from "./config/client";
+import { type Metadata } from "next";
 
-export const metadata = {
-  title: "Kokomi GPT",
-  description: "来喝Kokomi聊天吧",
+export const metadata: Metadata = {
+  title: "ChatGPT Next Web",
+  description: "Your personal ChatGPT Chat Bot.",
   viewport: {
     width: "device-width",
     initialScale: 1,
@@ -17,7 +18,7 @@ export const metadata = {
     { media: "(prefers-color-scheme: dark)", color: "#151515" },
   ],
   appleWebApp: {
-    title: "Kokomi GPT",
+    title: "ChatGPT Next Web",
     statusBarStyle: "default",
   },
 };
